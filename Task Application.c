@@ -1,3 +1,9 @@
+/*
+Beykoz University - Computer Enginerring
+Name: Mert Altuntaş
+ID : 1804010005
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
