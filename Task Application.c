@@ -37,6 +37,7 @@ void toptasks(struct node *p,int n);
 void viewtask(struct node *p);
 void display_structure(struct rec *r, int i);
 
+//***************************************************** INTRO FUNCTION ********************************************************
 void intro_ekrani(){
   printf("\n----------------------------------\n");
   printf("|  Software Engineering Project  |");
@@ -54,7 +55,7 @@ void intro_ekrani(){
   }
   system("cls");
 }
-
+//***************************************************** DISPLAY STRUCTURE *******************************************************
 void display_structure(struct rec *r, int i)
 {
   //displays structure elements
@@ -62,6 +63,7 @@ void display_structure(struct rec *r, int i)
 
 }
 
+//***************************************************** TOP N TASKS *************************************************************
 void toptasks(struct node *p,int n)   //prints top n tasks from file
 {
   int i=1;
@@ -75,6 +77,7 @@ void toptasks(struct node *p,int n)   //prints top n tasks from file
   }
 }
 
+//***************************************************** TASK VIEWER ********************************************************
 void viewtask(struct node *p)   //view task by name
 {
   int flag=0;
@@ -120,6 +123,8 @@ void viewlist(struct node *q)  //prints all tasks
 
   }
 }
+
+//***************************************************** TIME COMPARING ********************************************************
 int comparetime(char t1[],char t2[])   //returns 1 if t1 is before t2 time
 {
     int tvalue1=0;
@@ -153,7 +158,7 @@ int comparetime(char t1[],char t2[])   //returns 1 if t1 is before t2 time
         return 0;
 }
 
-
+//***************************************************** ADDING NEW TASK ********************************************************
 void addentry(struct node **p)
 {
     if(*p==NULL)
@@ -278,7 +283,7 @@ void addentry(struct node **p)
   }
 }
 
-
+//***************************************************** DELETING TASK ********************************************************
 void delete_entry(struct node **p)  //deletes based on task name
 {
   char del[20];
@@ -362,6 +367,7 @@ void delete_entry(struct node **p)  //deletes based on task name
 
 }
 
+//***************************************************** MAIN FUNCTION ********************************************************
 int main()
 {
   intro_ekrani();
