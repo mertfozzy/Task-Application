@@ -1,6 +1,6 @@
 /*
 Beykoz University - Computer Enginerring
-Name: Mert Altuntaş
+Name: Mert Altuntas
 ID : 1804010005
 
 It's not the final version. There are more things to do.
@@ -26,8 +26,8 @@ struct rec
     char time[6];
 
 };
-//struct node* initialize_list(struct node *p);
-//void initialize_list(struct node **p);
+
+
 void addfirstentry(struct node **p);
 void addentry(struct node **p);
 int comparetime(char t1[],char t2[]);
@@ -37,6 +37,23 @@ void toptasks(struct node *p,int n);
 void viewtask(struct node *p);
 void display_structure(struct rec *r, int i);
 
+void intro_ekrani(){
+  printf("\n----------------------------------\n");
+  printf("|  Software Engineering Project  |");
+  printf("\n----------------------------------\n");
+  printf("|     Made By: Mert Altuntas     |");
+  printf("\n----------------------------------\n");
+  printf("|\t  ID:   1804010005       |");
+  printf("\n----------------------------------\n\n\n");
+
+  printf("Loading  ");
+  int j, a;
+  for (a = 0; a <= 5; a++) {
+    printf(".");
+    for (j = 0; j <= 380000000; j++);
+  }
+  system("cls");
+}
 
 void display_structure(struct rec *r, int i)
 {
@@ -347,6 +364,7 @@ void delete_entry(struct node **p)  //deletes based on task name
 
 int main()
 {
+  intro_ekrani();
   struct node *p=NULL;
   //p=initialize_list(&p);
   FILE *fp= fopen("mother.txt","r");   //stores all names of files (tasks)
@@ -438,6 +456,7 @@ int main()
     int n;
     while(1)
     {
+    	        
                 printf("\n-------------------------------------------------\n");
                 printf("\n\n\t\tMAIN MENU:");
                 printf("\n\n\t1. ADD TASK");
