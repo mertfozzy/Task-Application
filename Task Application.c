@@ -51,7 +51,7 @@ void intro_ekrani(){
   int j, a;
   for (a = 0; a <= 5; a++) {
     printf(".");
-    for (j = 0; j <= 380000000; j++);
+    for (j = 0; j <= 120000000; j++);
   }
   system("cls");
 }
