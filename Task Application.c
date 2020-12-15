@@ -392,7 +392,7 @@ int main()
       char *c= curname;
 
       FILE *file= fopen(c,"r");
-      //printf("\ncurname= %s ", c);
+
 
        if(!file)
        {
@@ -401,11 +401,9 @@ int main()
         }
 
         fread(&newrec,sizeof(struct rec), 1,file); //stores all data from curname file in newrec structure.
-        //printf("\ngot record= %s ", c);
         record->fp= file;
         record->data=&newrec;
         record->next=NULL;
-        //printf("\nrecord   %s\n", record->data->time);
         p=record; //first insertion
         fclose(file);
 
@@ -420,14 +418,12 @@ int main()
 
            //gets file NAME from mother.txt
             char *c= curname;
-            //printf("\n inside while?");
+           
             FILE *file= fopen(c, "r");
             fread(&newr,sizeof(struct rec), 1,file); //stores all data from curname file in newrec structure.
             r->fp= file;
             r->data=&newr;
             r->next=NULL;
-            //printf("\ndata %s %s *p = %s %s", r->data->name, r->data->time, (p)->data->name, (p)->data->time);
-            //p->next=r;
             q=p;
             prev=NULL;
 
@@ -435,10 +431,10 @@ int main()
 
             while(q!=NULL && comparetime(q->data->time,r->data->time))
             {
-                //  printf("\ncheck= %d",comparetime(q->data->time,r->data->time));
+               
                   prev=q;
                   q=q->next;
-                  //viewlist(p);
+                 
             }
             if(prev==NULL)
             {
@@ -450,19 +446,19 @@ int main()
               r->next=q;
               prev->next=r;
             }
-            //viewlist(p);
+           
           strcpy(curname,"");
 
-        }//end of while
+        }
 
         fclose(fp);
-      }//end of else
+      }
 
     int ch=0;
     int n;
     while(1)
     {
-    	        
+    	        x:
                 printf("\n-------------------------------------------------\n");
                 printf("\n\n\t\tMAIN MENU:");
                 printf("\n\n\t1. ADD TASK");
@@ -519,16 +515,14 @@ int main()
                             default:
 
                             printf("\nWRONG ENTRY");
-
                             printf("\nPRESS ANY KEY TO TRY AGAIN");
-
-                            // getch();
-
+                            getch();
+							goto x;
                             break;
 
                     }
 
-                //system("cls");
+                
 
         }
         exit(0);
